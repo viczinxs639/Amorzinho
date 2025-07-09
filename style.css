@@ -60,3 +60,36 @@ h1 {
   line-height: 1.6;
   box-shadow: 0 0 20px #ffb6c1;
 }
+
+.neon-nome {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 2em;
+  color: #ff0000;
+  text-shadow:
+    0 0 5px #ff0000,
+    0 0 10px #ff0000,
+    0 0 20px #ff0000,
+    0 0 30px #ff0000;
+  font-weight: bold;
+}
+
+.assinatura {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 18px;
+  color: #a52a2a;
+}
+
+#coraçaozão {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4em;
+  color: red;
+  font-weight: bold;
+  display: none;
+  text-shadow: 0 0 15px red;
+  z-index: 9999;
+}
