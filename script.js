@@ -32,7 +32,21 @@ document.body.addEventListener("mousedown", () => {
     }, 3000);
   }, 4000);
 });
+document.body.addEventListener("mouseup", () => clearTimeout(pressTimer));
 
-document.body.addEventListener("mouseup", () => {
-  clearTimeout(pressTimer);
-});
+// Contador de amor desde 30/04/2025
+function atualizarContador() {
+  const inicio = new Date("2025-04-30T00:00:00");
+  const agora = new Date();
+  const diff = agora - inicio;
+
+  const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutos = Math.floor((diff / (1000 * 60)) % 60);
+  const segundos = Math.floor((diff / 1000) % 60);
+
+  document.getElementById("contador").textContent =
+    `${dias} dias, ${horas}h, ${minutos}m, ${segundos}s`;
+}
+setInterval(atualizarContador, 1000);
+atualizarContador();
