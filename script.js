@@ -1,4 +1,4 @@
-// Mensagens "eu te amo" caindo
+// "Eu te amo" caindo do topo
 function criarMensagem() {
   const msg = document.createElement("div");
   msg.className = "mensagem";
@@ -10,7 +10,7 @@ function criarMensagem() {
 }
 setInterval(criarMensagem, 500);
 
-// Mostrar "eu te amo" no clique
+// Clique = coração
 document.body.addEventListener("click", (e) => {
   const coracao = document.createElement("div");
   coracao.className = "coraçao";
@@ -21,20 +21,18 @@ document.body.addEventListener("click", (e) => {
   setTimeout(() => coracao.remove(), 1000);
 });
 
-// Mostrar coraçãozão após 4 segundos segurando
+// Segurar = coração gigante
 let pressTimer;
 document.body.addEventListener("mousedown", () => {
   pressTimer = setTimeout(() => {
     const coracaozao = document.getElementById("coraçaozão");
     coracaozao.style.display = "block";
-    setTimeout(() => {
-      coracaozao.style.display = "none";
-    }, 3000);
+    setTimeout(() => coracaozao.style.display = "none", 3000);
   }, 4000);
 });
 document.body.addEventListener("mouseup", () => clearTimeout(pressTimer));
 
-// Contador de amor desde 30/04/2025
+// Contador desde 30/04/2025
 function atualizarContador() {
   const inicio = new Date("2025-04-30T00:00:00");
   const agora = new Date();
