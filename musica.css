@@ -14,6 +14,7 @@ body {
   color: #ffc;
   font-weight: bold;
   text-shadow: 0 0 10px #ff6699;
+  z-index: 2;
 }
 
 .voltar {
@@ -40,6 +41,8 @@ body {
   font-size: 1.3em;
   line-height: 1.6em;
   white-space: pre-wrap;
+  position: relative;
+  z-index: 2;
 }
 
 .heart-bg {
@@ -47,9 +50,10 @@ body {
   width: 25px;
   height: 25px;
   background: #ff0033;
-  opacity: 0.4;
+  opacity: 0.3;
   transform: rotate(-45deg);
   animation: heartFloat 10s linear infinite;
+  z-index: 1;
 }
 .heart-bg:before,
 .heart-bg:after {
@@ -69,7 +73,7 @@ body {
   top: 0;
 }
 @keyframes heartFloat {
-  0% { transform: translateY(100vh) rotate(-45deg); opacity: 0.4; }
+  0% { transform: translateY(100vh) rotate(-45deg); opacity: 0.3; }
   100% { transform: translateY(-100vh) rotate(-45deg); opacity: 0; }
 }
 
@@ -82,8 +86,25 @@ body {
   animation: slideLeft 15s linear infinite;
   top: 60px;
   user-select: none;
+  z-index: 1;
 }
 @keyframes slideLeft {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
+}
+
+/* Eu te amo caindo */
+.falling-text {
+  position: fixed;
+  font-size: 1.5em;
+  font-weight: bold;
+  opacity: 0.2;
+  animation: fallText linear infinite;
+  user-select: none;
+  z-index: 0;
+  color: #ff99aa;
+}
+@keyframes fallText {
+  0% { top: -50px; }
+  100% { top: 110vh; }
 }
