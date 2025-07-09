@@ -1,5 +1,13 @@
+let tocando = false;
+
 function mostrarMensagem() {
   alert("Julia, você é muito especial pra mim! 💖 Nunca se esqueça disso.");
+
+  if (!tocando) {
+    const audio = document.getElementById("musica");
+    audio.play();
+    tocando = true;
+  }
 }
 
 // Criar corações animados no fundo
