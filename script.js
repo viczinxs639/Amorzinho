@@ -10,28 +10,29 @@ function criarMensagem() {
 }
 setInterval(criarMensagem, 500);
 
-// Corações e mensagens ao clicar
-let timer;
-document.body.addEventListener("mousedown", (e) => {
-  timer = setTimeout(() => {
-    const grandao = document.getElementById("coraçaozão");
-    grandao.style.display = "block";
+// Mostrar "eu te amo" no clique
+document.body.addEventListener("click", (e) => {
+  const coracao = document.createElement("div");
+  coracao.className = "coraçao";
+  coracao.style.left = e.clientX + "px";
+  coracao.style.top = e.clientY + "px";
+  coracao.textContent = "eu te amo 💖";
+  document.body.appendChild(coracao);
+  setTimeout(() => coracao.remove(), 1000);
+});
+
+// Mostrar coraçãozão após 4 segundos segurando
+let pressTimer;
+document.body.addEventListener("mousedown", () => {
+  pressTimer = setTimeout(() => {
+    const coracaozao = document.getElementById("coraçaozão");
+    coracaozao.style.display = "block";
     setTimeout(() => {
-      grandao.style.display = "none";
+      coracaozao.style.display = "none";
     }, 3000);
   }, 4000);
 });
 
 document.body.addEventListener("mouseup", () => {
-  clearTimeout(timer);
-});
-
-document.body.addEventListener("click", (e) => {
-  const coraçao = document.createElement("div");
-  coraçao.className = "coraçao";
-  coraçao.style.left = e.clientX + "px";
-  coraçao.style.top = e.clientY + "px";
-  coraçao.textContent = "eu te amo 💖";
-  document.body.appendChild(coraçao);
-  setTimeout(() => coraçao.remove(), 1000);
+  clearTimeout(pressTimer);
 });
