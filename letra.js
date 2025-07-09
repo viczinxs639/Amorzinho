@@ -1,3 +1,4 @@
+// Letra da música
 const texto = `E eu desistiria da eternidade para te tocar
 Porque eu sei que de alguma forma você me sente
 Você é o mais próximo que estarei do paraíso
@@ -26,7 +27,7 @@ function typeWriter() {
 }
 typeWriter();
 
-// Criar muitos corações no fundo
+// Criar corações de fundo
 function createHeartBg() {
   const heart = document.createElement('div');
   heart.className = 'heart-bg';
@@ -35,5 +36,16 @@ function createHeartBg() {
   document.body.appendChild(heart);
   setTimeout(() => heart.remove(), 15000);
 }
-// Mais corações (intervalo menor)
 setInterval(createHeartBg, 200);
+
+// Criar "eu te amo" caindo no fundo
+function createFallingText() {
+  const msg = document.createElement('div');
+  msg.className = 'falling-text';
+  msg.textContent = 'eu te amo';
+  msg.style.left = Math.random() * 100 + 'vw';
+  msg.style.animationDuration = (4 + Math.random() * 4) + 's';
+  document.body.appendChild(msg);
+  setTimeout(() => msg.remove(), 10000);
+}
+setInterval(createFallingText, 300);
