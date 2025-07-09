@@ -1,60 +1,89 @@
 body {
-  background: radial-gradient(circle, #ffe6f0 0%, #fff0f5 100%);
   margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  min-height: 100vh;
-  overflow: hidden;
+  background: #330000;
+  font-family: 'Courier New', Courier, monospace;
+  color: #ffccd5;
+  overflow-x: hidden;
   position: relative;
 }
 
-.letra-container {
-  max-width: 800px;
-  padding: 30px;
-  background: #ffffffcc;
-  border-radius: 20px;
-  box-shadow: 0 0 25px #ffb6c1;
+.dedicacao {
   text-align: center;
-  font-size: 22px;
-  line-height: 1.8;
-  color: #b22222;
-  margin-top: 80px;
-  white-space: pre-line;
-}
-
-.mensagem-final {
-  display: none;
-  margin-top: 40px;
-  font-size: 32px;
-  color: #ff1493;
+  margin-top: 30px;
+  font-size: 1.5em;
+  color: #ffc;
   font-weight: bold;
-  text-shadow: 0 0 10px red;
-  text-align: center;
+  text-shadow: 0 0 10px #ff6699;
 }
 
-.amor-fundo {
+.voltar {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-  animation: mover 20s linear infinite;
-  background-image: repeating-linear-gradient(
-    45deg,
-    rgba(255, 182, 193, 0.2) 0,
-    rgba(255, 182, 193, 0.2) 1px,
-    transparent 1px,
-    transparent 20px
-  );
+  top: 20px;
+  left: 20px;
+  background: #ff0033;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff6699;
+  z-index: 10;
+}
+.voltar:hover {
+  background: #cc0033;
 }
 
-@keyframes mover {
-  0% { background-position: 0 0; }
-  100% { background-position: 1000px 1000px; }
+.lyrics {
+  max-width: 600px;
+  margin: 100px auto;
+  font-size: 1.3em;
+  line-height: 1.6em;
+  white-space: pre-wrap;
+}
+
+.heart-bg {
+  position: fixed;
+  width: 25px;
+  height: 25px;
+  background: #ff0033;
+  opacity: 0.4;
+  transform: rotate(-45deg);
+  animation: heartFloat 10s linear infinite;
+}
+.heart-bg:before,
+.heart-bg:after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: #ff0033;
+  border-radius: 50%;
+}
+.heart-bg:before {
+  top: -12.5px;
+  left: 0;
+}
+.heart-bg:after {
+  left: 12.5px;
+  top: 0;
+}
+@keyframes heartFloat {
+  0% { transform: translateY(100vh) rotate(-45deg); opacity: 0.4; }
+  100% { transform: translateY(-100vh) rotate(-45deg); opacity: 0; }
+}
+
+.love-text {
+  position: fixed;
+  width: 100%;
+  font-size: 2em;
+  font-weight: bold;
+  color: #ff3366;
+  animation: slideLeft 15s linear infinite;
+  top: 60px;
+  user-select: none;
+}
+@keyframes slideLeft {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
