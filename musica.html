@@ -1,29 +1,28 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Para Minha Princesa 🎵</title>
-  <link rel="stylesheet" href="musica.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Para Júlia - Música Íris ❤️</title>
+  <link rel="stylesheet" href="musica.css">
 </head>
 <body>
 
-  <audio id="audio" autoplay>
-    <source src="musica.mp3" type="audio/mpeg">
-    Seu navegador não suporta áudio.
-  </audio>
+  <!-- Frase dedicada -->
+  <div class="dedicacao">Eu te amo muito minha princesinha ❤️<br>Te dedico sua música favorita 🎶</div>
 
-  <!-- Mensagens "eu te amo" passando -->
-  <div class="amor-fundo"></div>
+  <!-- Botão de voltar -->
+  <button class="voltar" onclick="window.location.href='index.html'">← Voltar</button>
 
-  <!-- Letra da música -->
-  <div class="letra-container" id="letra"></div>
+  <!-- Música -->
+  <audio id="audio" src="iris.mp3" autoplay></audio>
 
-  <!-- Mensagem final -->
-  <div class="mensagem-final" id="fim">
-    EU TE AMO MUITO MINHA PRINCESINHA ❤️
-  </div>
+  <!-- Letra -->
+  <div class="lyrics" id="lyrics"></div>
 
-  <script src="letra.js"></script>
+  <!-- Texto romântico passando -->
+  <div class="love-text">Eu te amo ❤️ Eu te amo ❤️ Eu te amo ❤️ Eu te amo ❤️ Eu te amo ❤️</div>
+
+  <script src="musica.js"></script>
 </body>
 </html>
