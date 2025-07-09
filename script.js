@@ -2,7 +2,7 @@ function mostrarMensagem() {
   alert("Julia, você é muito especial pra mim! 💖 Nunca se esqueça disso.");
 }
 
-// Efeito digitando
+// Texto digitando
 const texto = "E cada batida do meu coração... é um 'eu te amo' só pra você 💖";
 const h1 = document.querySelector(".digitando");
 let i = 0;
@@ -15,42 +15,27 @@ function digitar() {
 }
 digitar();
 
-// Corações animados
+// Criar corações ao clicar
 document.body.addEventListener("click", function (e) {
   const heart = document.createElement("div");
   heart.className = "heart";
   heart.style.left = e.clientX + "px";
   heart.style.top = e.clientY + "px";
   document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 2000);
+  setTimeout(() => heart.remove(), 3000);
 });
 
-// Estrelas animadas no fundo
-const canvas = document.getElementById('estrelas');
-const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+// Mensagens "eu te amo" coloridas descendo
+const mensagensFundo = document.querySelector(".background-mensagens");
+const cores = ["#ff0000", "#ff69b4", "#ff6f91", "#ff1493", "#e75480"];
 
-let estrelas = [];
-for (let i = 0; i < 100; i++) {
-  estrelas.push({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    radius: Math.random() * 1.5,
-    alpha: Math.random()
-  });
-}
-
-function desenharEstrelas() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = 'white';
-  estrelas.forEach(estrela => {
-    ctx.globalAlpha = estrela.alpha;
-    ctx.beginPath();
-    ctx.arc(estrela.x, estrela.y, estrela.radius, 0, Math.PI * 2);
-    ctx.fill();
-  });
-  ctx.globalAlpha = 1;
-  requestAnimationFrame(desenharEstrelas);
-}
-desenharEstrelas();
+setInterval(() => {
+  const msg = document.createElement("div");
+  msg.className = "mensagem-fundo";
+  msg.innerText = "Eu te amo";
+  msg.style.left = Math.random() * 100 + "vw";
+  msg.style.color = cores[Math.floor(Math.random() * cores.length)];
+  msg.style.fontSize = (Math.random() * 1 + 1) + "rem";
+  mensagensFundo.appendChild(msg);
+  setTimeout(() => msg.remove(), 10000);
+}, 400);
