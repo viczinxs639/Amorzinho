@@ -34,7 +34,7 @@ function escreverTexto(texto, i = 0) {
   escrevendo = true;
   if (i < texto.length) {
     letraDiv.innerHTML += texto[i];
-    setTimeout(() => escreverTexto(texto, i + 1), 40); // Velocidade de digitação
+    setTimeout(() => escreverTexto(texto, i + 1), 40);
   } else {
     letraDiv.innerHTML += "\n";
     escrevendo = false;
@@ -58,3 +58,20 @@ function mostrarLetra() {
 audio.addEventListener("play", () => {
   mostrarLetra();
 });
+
+// Eu te amo caindo
+function criarEuTeAmoCaindo() {
+  const msg = document.createElement("div");
+  msg.className = "eu-te-amo-caindo";
+  msg.textContent = "eu te amo";
+  msg.style.left = Math.random() * 100 + "vw";
+  msg.style.fontSize = (16 + Math.random() * 10) + "px";
+  msg.style.animationDuration = (5 + Math.random() * 3) + "s";
+  document.body.appendChild(msg);
+
+  setTimeout(() => {
+    msg.remove();
+  }, 7000);
+}
+
+setInterval(criarEuTeAmoCaindo, 500);
