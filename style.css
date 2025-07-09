@@ -93,8 +93,15 @@ button:hover {
   border-radius: 50%;
 }
 
-.heart::before { top: -10px; left: 0; }
-.heart::after { left: -10px; top: 0; }
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: -10px;
+}
 
 @keyframes subir {
   0% { bottom: -10px; opacity: 0; }
