@@ -42,14 +42,8 @@ h1 {
 }
 
 @keyframes cair {
-  0% {
-    top: -50px;
-    opacity: 1;
-  }
-  100% {
-    top: 100vh;
-    opacity: 0;
-  }
+  0% { top: -50px; opacity: 1; }
+  100% { top: 100vh; opacity: 0; }
 }
 
 .coraçao {
@@ -61,14 +55,8 @@ h1 {
 }
 
 @keyframes subir {
-  0% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-100px);
-  }
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-100px); }
 }
 
 .texto-lindo {
@@ -114,4 +102,26 @@ h1 {
   display: none;
   text-shadow: 0 0 20px red, 0 0 50px red;
   z-index: 9999;
+}
+
+.botao-musica {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.botao-musica a {
+  background: #ff69b4;
+  color: white;
+  padding: 15px 30px;
+  font-size: 20px;
+  text-decoration: none;
+  border-radius: 25px;
+  box-shadow: 0 0 15px #ff1493;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.botao-musica a:hover {
+  background: #ff1493;
+  box-shadow: 0 0 25px #ff1493;
 }
