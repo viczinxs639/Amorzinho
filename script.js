@@ -10,13 +10,28 @@ function criarMensagem() {
 }
 setInterval(criarMensagem, 500);
 
-// Corações ao clicar
+// Corações e mensagens ao clicar
+let timer;
+document.body.addEventListener("mousedown", (e) => {
+  timer = setTimeout(() => {
+    const grandao = document.getElementById("coraçaozão");
+    grandao.style.display = "block";
+    setTimeout(() => {
+      grandao.style.display = "none";
+    }, 3000);
+  }, 4000);
+});
+
+document.body.addEventListener("mouseup", () => {
+  clearTimeout(timer);
+});
+
 document.body.addEventListener("click", (e) => {
   const coraçao = document.createElement("div");
   coraçao.className = "coraçao";
   coraçao.style.left = e.clientX + "px";
   coraçao.style.top = e.clientY + "px";
-  coraçao.textContent = "❤️";
+  coraçao.textContent = "eu te amo 💖";
   document.body.appendChild(coraçao);
   setTimeout(() => coraçao.remove(), 1000);
 });
